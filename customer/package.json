@@ -1,0 +1,27 @@
+{
+  "name": "customers",
+  "version": "1.0.0",
+  "description": "Microsservice that manage customers",
+  "main": "index.js",
+  "repository": "https://github.com/brayanfreitas/products-management.git",
+  "author": "Brayan",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.8.9",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "nodemon": "^3.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start:dev": "ts-node-dev ./src/server.ts | pino-pretty --colorize",
+    "start": "node ./dist/server.js"
+  }
+}
