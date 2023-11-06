@@ -17,6 +17,7 @@
     "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.0",
+    "class-validator": "^0.14.0",
     "eslint": "^8.52.0",
     "nodemon": "^3.0.1",
     "prettier": "3.0.3",
@@ -35,13 +36,11 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "lint-staged": {
-    "src/**/*.{ts,js,yml,yaml}": [
-      "yarn eslint:check",
-      "yarn eslint:fix",
-      "yarn prettier:check",
-      "yarn prettier:fix"
-    ],
-    "*.{js,jsx,ts,tsx,css,md}": "prettier --write ."
+  "_moduleAliases": {
+    "@src":  ".",
+    "@domain" : "src/domain",
+    "@infra": "src/infra",
+    "@common" : "src/common",
+    "something"  : "src/foo"
   }
 }

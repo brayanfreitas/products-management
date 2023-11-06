@@ -6,12 +6,6 @@ type ApplicationConfig = {
 }
 
 
-
-
-
-
-
-
 export const applicationConfig: ApplicationConfig = {
     host: process.env.HOST || "host",
     port: parseInt(process.env.PORT || "3000")
