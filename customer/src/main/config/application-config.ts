@@ -1,5 +1,3 @@
-
-
 type ApplicationConfig = {
     host: string,
     port: number

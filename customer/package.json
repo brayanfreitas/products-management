@@ -10,7 +10,8 @@
     "fastify": "^4.24.3",
     "fastify-cors": "^6.1.0",
     "pg": "^8.11.3",
-    "pino-pretty": "^10.2.3"
+    "pino-pretty": "^10.2.3",
+    "tsyringe": "^4.8.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
@@ -37,10 +38,10 @@
     }
   },
   "_moduleAliases": {
-    "@src":  ".",
-    "@domain" : "src/domain",
+    "@src": ".",
+    "@domain": "src/domain",
     "@infra": "src/infra",
-    "@common" : "src/common",
-    "something"  : "src/foo"
+    "@common": "src/common",
+    "something": "src/foo"
   }
 }

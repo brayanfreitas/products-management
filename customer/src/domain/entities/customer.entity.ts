@@ -10,7 +10,7 @@ import {
     IsUUID
   } from 'class-validator';
 
-export class Customer {
+export class CustomerEntity {
     @IsString()
     @IsNotEmpty()
     @IsUUID()
@@ -53,6 +53,6 @@ export class Customer {
         this.email = email;
         this.cellPhone = cellPhone;
         this.gender = gender; 
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;        
     }
 }
