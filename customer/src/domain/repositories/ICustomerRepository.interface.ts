@@ -6,7 +6,5 @@ export interface ICustomerRepository {
     getCustomerById: (id: string) => Promise<CustomerEntity>,
     getCustomerByDocument: (document: string) => Promise<CustomerEntity>,
     getAllCustomers: () => Promise<CustomerEntity>
-    deleteCustomer: ()=> Promise<null>
-
-    
+    deleteCustomer: ()=> Promise<null>    
 }

@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es2016",     
-    "module": "commonjs", 
-    "rootDir": "./src",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "outDir": "./dist/",                    
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true, 
+    "incremental": true,
+    "outDir": "dist",
+    "rootDirs": ["src", "tests"],
+    "target": "es2022",
+    "sourceMap": true,
     "skipLibCheck": true,
-    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@@/prisma/*": ["../prisma/*"],
+      "@/*": ["*"],
+      "@/tests/*": ["../tests/*"]
+    },
+    "strict": true,
+    "noImplicitOverride": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "ts-node": { "transpileOnly": true }
+  "include": ["src", "tests",  "src/main/index.ts"]
 }

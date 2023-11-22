@@ -7,14 +7,20 @@
   "author": "Brayan",
   "license": "MIT",
   "dependencies": {
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^1.10.1",
+    "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
     "fastify-cors": "^6.1.0",
+    "module-alias": "^2.2.3",
     "pg": "^8.11.3",
     "pino-pretty": "^10.2.3",
+    "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.8.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
+    "@types/module-alias": "^2.0.4",
     "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.0",
@@ -38,10 +44,11 @@
     }
   },
   "_moduleAliases": {
-    "@src": ".",
-    "@domain": "src/domain",
-    "@infra": "src/infra",
-    "@common": "src/common",
-    "something": "src/foo"
+    "@/common": "dist/common",
+    "@/controllers": "dist/controllers",
+    "@/services": "dist/services",
+    "@/routes": "dist/routes",
+    "@/infra": "dist/infra",
+    "@/domain": "dist/domain"
   }
 }
