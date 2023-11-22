@@ -1,5 +1,5 @@
-import { CustomerDto } from "../dtos";
-import { CustomerEntity } from "../entities";
+import { CustomerDto } from "../../dtos";
+import { CustomerEntity } from "../../entities";
 
 export interface ICustomerRepository {
     createCustomer: (customerData: CustomerDto) => Promise<CustomerEntity>,
