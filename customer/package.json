@@ -34,6 +34,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
+    "generate": "", 
     "build": "tsc -p tsconfig.json",
     "start:dev": "nodemon --watch 'src/**/*.ts' -r tsconfig-paths/register --exec 'ts-node' src/server.ts",
     "start": "node ./dist/server.js"

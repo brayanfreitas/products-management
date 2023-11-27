@@ -7,6 +7,25 @@ datasource db {
 model Customer {
   id String @id @default(uuid())
   name String
-  email String 
-  cellphone String
+  email String @unique
+  cellphone String?
+  gender Role
+  dateOfBirth String
+  address Address @relation(fields: [addressId], references: [id])
+  addressId String @unique
+}
+
+
+model Address {
+  id String @id @default(uuid())
+  address String 
+  number Int
+  district String 
+  customer Customer?
+}
+
+enum Role {
+  MALE
+  FEMININE
+  OTHER
 }
