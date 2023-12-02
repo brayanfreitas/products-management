@@ -1,4 +1,3 @@
-
 const fastifySwaggerOptions = {
   routePrefix: '/docs',
   exposeRoute: true,

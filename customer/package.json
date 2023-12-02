@@ -9,7 +9,9 @@
   "dependencies": {
     "@fastify/swagger": "^8.12.0",
     "@fastify/swagger-ui": "^1.10.1",
+    "@prisma/client": "5.5.2",
     "dotenv": "^16.3.1",
+    "eslint-plugin-n": "^16.3.1",
     "fastify": "^4.24.3",
     "fastify-cors": "^6.1.0",
     "module-alias": "^2.2.3",
@@ -26,6 +28,10 @@
     "@typescript-eslint/parser": "^6.9.0",
     "class-validator": "^0.14.0",
     "eslint": "^8.52.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^3.0.1",
     "prettier": "3.0.3",
     "prisma": "^5.5.2",
@@ -34,10 +40,16 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "generate": "", 
+    "migration:generate": "npx prisma migrate dev",
+    "generate": "npx prisma -- generate",
+    "migrate:run": "prisma migrate dev --schema=prisma/sales/schema.prisma",
+    "migrate:deploy": "prisma migrate deploy --schema=prisma/sales/schema.prisma",
     "build": "tsc -p tsconfig.json",
     "start:dev": "nodemon --watch 'src/**/*.ts' -r tsconfig-paths/register --exec 'ts-node' src/server.ts",
-    "start": "node ./dist/server.js"
+    "start": "node ./dist/server.js",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
   },
   "config": {
     "commitizen": {

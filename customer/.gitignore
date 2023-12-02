@@ -1,3 +1,8 @@
 node_modules
-dist
 .env
+dist
+prisma/*/generated
+package-lock.json
+*.log
+prisma/generated
+junit.xml

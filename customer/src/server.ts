@@ -8,7 +8,6 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
 import { fastifySwaggerOptions, fastifySwaggerUiOptions } from './common';
 
-
 (async () => {
   const server = fastify({ logger: true });
 
@@ -22,7 +21,7 @@ import { fastifySwaggerOptions, fastifySwaggerUiOptions } from './common';
 
   server.register(
     async function (fastifyInstance) {
-      //rotas aqui
+      // rotas aqui
     });
 
   server.listen({ port: 3000, host: '0.0.0.0' }, (err, address) => {
