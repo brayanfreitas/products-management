@@ -42,8 +42,8 @@
   "scripts": {
     "migration:generate": "npx prisma migrate dev",
     "generate": "npx prisma -- generate",
-    "migrate:run": "prisma migrate dev --schema=prisma/sales/schema.prisma",
-    "migrate:deploy": "prisma migrate deploy --schema=prisma/sales/schema.prisma",
+    "migrate:run": "prisma migrate dev --schema=prisma/schema.prisma",
+    "migrate:deploy": "prisma migrate deploy --schema=prisma/schema.prisma",
     "build": "tsc -p tsconfig.json",
     "start:dev": "nodemon --watch 'src/**/*.ts' -r tsconfig-paths/register --exec 'ts-node' src/server.ts",
     "start": "node ./dist/server.js",

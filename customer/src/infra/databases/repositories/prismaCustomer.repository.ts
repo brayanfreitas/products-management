@@ -3,7 +3,7 @@ import { injectable } from 'tsyringe';
 import { customerDatabase } from '../prisma-client';
 
 @injectable()
-export class customerPrismaRepository implements ICustomerRepository {
+export class CustomerPrismaRepository implements ICustomerRepository {
   async createCustomer (customerData: CustomerDto): Promise<CustomerModel> {
     const customer = await customerDatabase.customer.create({
       data: {
@@ -29,9 +29,9 @@ export class customerPrismaRepository implements ICustomerRepository {
     return customer;
   }
 
-  async getCustomerById (customerId: string): Promise<CustomerModel> {};
-  async getCustomerByDocument (customerId: string): Promise<CustomerModel> {};
-  async getAllCustomers (): Promise<CustomerModel[]> {};
-  async updateCustomer (customerData: CustomerDto): Promise<CustomerModel> {};
-  async deleteCustomer (): Promise<null> {};
+  // async getCustomerById (customerId: string): Promise<CustomerModel> {};
+  // async getCustomerByDocument (customerId: string): Promise<CustomerModel> {};
+  // async getAllCustomers (): Promise<CustomerModel[]> {};
+  // async updateCustomer (customerData: CustomerDto): Promise<CustomerModel> {};
+  // async deleteCustomer (): Promise<null> {};
 }
