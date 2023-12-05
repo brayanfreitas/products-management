@@ -18,6 +18,7 @@
     "pg": "^8.11.3",
     "pino-pretty": "^10.2.3",
     "reflect-metadata": "^0.1.13",
+    "tsc-alias": "^1.8.8",
     "tsyringe": "^4.8.0"
   },
   "devDependencies": {
@@ -44,7 +45,7 @@
     "generate": "npx prisma -- generate",
     "migrate:run": "prisma migrate dev --schema=prisma/schema.prisma",
     "migrate:deploy": "prisma migrate deploy --schema=prisma/schema.prisma",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig-build.json && tsc-alias -p tsconfig-build.json",
     "start:dev": "nodemon --watch 'src/**/*.ts' -r tsconfig-paths/register --exec 'ts-node' src/server.ts",
     "start": "node ./dist/server.js",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",

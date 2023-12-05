@@ -8,3 +8,4 @@ export interface ICustomerRepository {
 //   getAllCustomers: () => Promise<CustomerModel[]>
 //   deleteCustomer: () => Promise<null>
 // }
+}
