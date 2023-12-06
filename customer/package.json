@@ -41,6 +41,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
+    "postinstall": "prisma generate",
     "migration:generate": "npx prisma migrate dev",
     "generate": "npx prisma -- generate",
     "migrate:run": "prisma migrate dev --schema=prisma/schema.prisma",
