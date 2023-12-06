@@ -1,6 +1,0 @@
-node_modules
-.env
-prisma/*/generated
-package-lock.json
-*.log
-junit.xml

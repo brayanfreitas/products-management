@@ -1,0 +1,69 @@
+{
+  "name": "customers",
+  "version": "1.0.0",
+  "description": "Microsservice that manage customers",
+  "main": "index.js",
+  "repository": "https://github.com/brayanfreitas/products-management.git",
+  "author": "Brayan",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^1.10.1",
+    "@prisma/client": "5.5.2",
+    "dotenv": "^16.3.1",
+    "eslint-plugin-n": "^16.3.1",
+    "fastify": "^4.24.3",
+    "fastify-cors": "^6.1.0",
+    "module-alias": "^2.2.3",
+    "pg": "^8.11.3",
+    "pino-pretty": "^10.2.3",
+    "reflect-metadata": "^0.1.13",
+    "tsc-alias": "^1.8.8",
+    "tsyringe": "^4.8.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^20.8.9",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.0",
+    "class-validator": "^0.14.0",
+    "eslint": "^8.52.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.1",
+    "prettier": "3.0.3",
+    "prisma": "^5.5.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "postinstall": "prisma generate",
+    "migration:generate": "npx prisma migrate dev",
+    "generate": "npx prisma -- generate",
+    "migrate:run": "prisma migrate dev --schema=prisma/schema.prisma",
+    "migrate:deploy": "prisma migrate deploy --schema=prisma/schema.prisma",
+    "build": "tsc -p tsconfig-build.json && tsc-alias -p tsconfig-build.json",
+    "start:dev": "nodemon --watch 'src/**/*.ts' -r tsconfig-paths/register --exec 'ts-node' src/server.ts",
+    "start": "node ./dist/server.js",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "_moduleAliases": {
+    "@/common": "dist/common",
+    "@/controllers": "dist/controllers",
+    "@/services": "dist/services",
+    "@/routes": "dist/routes",
+    "@/infra": "dist/infra",
+    "@/domain": "dist/domain"
+  }
+}
