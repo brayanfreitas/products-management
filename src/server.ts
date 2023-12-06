@@ -8,6 +8,7 @@ import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
 import { fastifySwaggerOptions, fastifySwaggerUiOptions } from './common';
 import { customerFuelRoutes } from '@/routes/customerRoutes';
+import cors from '@fastify/cors'
 
 (async () => {
   const server = fastify({ logger: true });
@@ -19,6 +20,8 @@ import { customerFuelRoutes } from '@/routes/customerRoutes';
   server.register(fastifySwagger, fastifySwaggerOptions);
 
   server.register(fastifySwaggerUi, swaggerUiOptions);
+
+  server.register(cors)
 
   server.register(
     async function (fastifyInstance) {

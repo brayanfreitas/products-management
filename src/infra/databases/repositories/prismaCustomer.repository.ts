@@ -4,7 +4,7 @@ import { customerDatabase } from '../prisma-client';
 
 @injectable()
 export class CustomerPrismaRepository implements ICustomerRepository {
-  async createCustomer (customerData: CustomerDto): Promise<CustomerModel> {
+  async createCustomer(customerData: CustomerDto): Promise<CustomerModel> {
     const customer = await customerDatabase.customer.create({
       data: {
         name: customerData.name,
@@ -29,9 +29,38 @@ export class CustomerPrismaRepository implements ICustomerRepository {
     return customer;
   }
 
+  async getAllCustomers(): Promise<CustomerModel[]> {
+    const customers = await customerDatabase.customer.findMany({
+    });
+    return customers;
+  };
+
+  async getCustomerById(customerId: string): Promise<CustomerModel> {
+    const customer = await customerDatabase.customer.findUnique({
+      where: {
+        id: customerId
+      }
+    });
+    if (!customer) throw new Error('Customer not found');
+    return customer;
+  }
+
+  async deleteCustomer(id: string): Promise<void> {
+    try {
+      const customer = await this.getCustomerById(id);
+      if (!customer) throw new Error('Customer not found');
+      await customerDatabase.customer.delete({
+        where: {
+          id
+        }
+      });
+    } catch (error: any) {
+      throw new Error('Error at deleting customer');
+    }
+  };
+
   // async getCustomerById (customerId: string): Promise<CustomerModel> {};
   // async getCustomerByDocument (customerId: string): Promise<CustomerModel> {};
-  // async getAllCustomers (): Promise<CustomerModel[]> {};
   // async updateCustomer (customerData: CustomerDto): Promise<CustomerModel> {};
-  // async deleteCustomer (): Promise<null> {};
+  //
 }
