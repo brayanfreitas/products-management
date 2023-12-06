@@ -1,8 +1,6 @@
 node_modules
 .env
-dist
 prisma/*/generated
 package-lock.json
 *.log
-prisma/generated
 junit.xml
