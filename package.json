@@ -22,6 +22,7 @@
     "tsyringe": "^4.8.0"
   },
   "devDependencies": {
+    "@flydotio/node-demo": "^0.2.1",
     "@tsconfig/node20": "^20.1.2",
     "@types/module-alias": "^2.0.4",
     "@types/node": "^20.8.9",

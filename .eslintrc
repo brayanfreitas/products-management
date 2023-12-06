@@ -1,7 +1,7 @@
 {
   "extends": "standard-with-typescript",
   "parserOptions": {
-    "project": "./customer/tsconfig.json",
+    "project": "./tsconfig.json",
     "ecmaVersion": 13,
     "sourceType": "module"
   },
